@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from 'react';
 import PresentingComplaintCard from "../components/PresentingComplaintCard";
 
 function PresentingComplaints() {
   const complaints = [
+    
     {
       title: "Chest Pain",
       approach: "Take a detailed history of pain, associated symptoms, and rule out cardiac causes.",
@@ -735,17 +736,40 @@ function PresentingComplaints() {
     }
   
     // Add more complaints here as needed...
-    
-
   ];
+  const sortedComplaints = [...complaints].sort((a, b) =>
+    a.title.localeCompare(b.title)
+  );
+  
+  const [search, setSearch] = useState("");
 
+  const filteredComplaints = sortedComplaints.filter((complaint) =>
+
+    complaint.title.toLowerCase().includes(search.toLowerCase())
+  );
+  
   return (
     <div>
       <h2>Presenting Complaints</h2>
       <p>Cases focused on initial patient symptoms and history-taking.</p>
-      
+  
+      <input
+        type="text"
+        placeholder="Search complaints..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{
+          padding: "0.5rem",
+          marginBottom: "1rem",
+          width: "100%",
+          maxWidth: "400px",
+          borderRadius: "5px",
+          border: "1px solid #ccc"
+        }}
+      />
+  
       <div className="complaint-grid">
-        {complaints.map((item, index) => (
+        {filteredComplaints.map((item, index) => (
           <PresentingComplaintCard
             key={index}
             title={item.title}
@@ -756,6 +780,7 @@ function PresentingComplaints() {
       </div>
     </div>
   );
+  
   
 }
 
