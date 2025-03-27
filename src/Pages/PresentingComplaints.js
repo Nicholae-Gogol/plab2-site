@@ -747,7 +747,8 @@ function PresentingComplaints() {
 
     complaint.title.toLowerCase().includes(search.toLowerCase())
   );
-  
+  const [openIndex, setOpenIndex] = useState(null);
+
   return (
     <div>
       <h2>Presenting Complaints</h2>
@@ -769,14 +770,17 @@ function PresentingComplaints() {
       />
   
       <div className="complaint-grid">
-        {filteredComplaints.map((item, index) => (
-          <PresentingComplaintCard
-            key={index}
-            title={item.title}
-            approach={item.approach}
-            scenarios={item.scenarios}
-          />
-        ))}
+      {filteredComplaints.map((item, index) => (
+  <PresentingComplaintCard
+    key={index}
+    title={item.title}
+    approach={item.approach}
+    scenarios={item.scenarios}
+    isOpen={openIndex === index}
+    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+  />
+))}
+
       </div>
     </div>
   );

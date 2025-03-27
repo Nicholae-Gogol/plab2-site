@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./PresentingComplaintCard.css";
 
-function PresentingComplaintCard({ title, approach, scenarios }) {
-  const [isOpen, setIsOpen] = useState(false);
-
+function PresentingComplaintCard({ title, approach, scenarios, isOpen, onClick }) {
   return (
     <div className="complaint-card">
-      <div className="complaint-header" onClick={() => setIsOpen(!isOpen)}>
+      <div className="complaint-header" onClick={onClick}>
         <h3>{title}</h3>
         <span>{isOpen ? "▲" : "▼"}</span>
       </div>
@@ -25,3 +23,4 @@ function PresentingComplaintCard({ title, approach, scenarios }) {
 }
 
 export default PresentingComplaintCard;
+
