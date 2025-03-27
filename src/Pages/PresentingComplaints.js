@@ -83,12 +83,41 @@ function PresentingComplaints() {
       title: "Abdominal Pain",
       approach: "Explore onset, character, location, radiation, associated GI/genitourinary symptoms, and systemic signs.",
       scenarios: [
-        "Appendicitis",
-        "Cholecystitis",
-        "Pancreatitis",
-        "Peptic Ulcer",
-        "Ectopic Pregnancy"
+        {
+          region: "Right Upper Quadrant",
+          cases: [
+            { name: "Biliary colic", link: "https://docs.google.com/document/d/1Sb53PgBwj0lKEYqzQR30uG6-TVvfrLP6_0VwgJ5Lxvo/edit?usp=drive_link" },
+            { name: "Acute cholecystitis", link: "https://docs.google.com/document/d/1Ag3DLnzfeqxbNyFLE7F9ICv1uxrrZmE7CaJCw4GV9hc/edit?tab=t.0" },
+            { name: "Acute cholangitis", link: "https://docs.google.com/document/d/1Fo-hyGdVxwXImRt5MoVmIEqHel9kap8ba1fP3wRajBI/edit?tab=t.0" },
+          ]
+        },
+        {
+          region: "Epigastric Region",
+          cases: ["Acute pancreatitis"]
+        },
+        {
+          region: "Umbilical Region",
+          cases: ["Intestinal obstruction"]
+        },
+        {
+          region: "Right Lower Quadrant",
+          cases: ["Appendicitis", "Ectopic pregnancy"]
+        },
+        {
+          region: "Lower Abdomen",
+          cases: ["Pelvic Inflammatory Disease (PID)", "Primary dysmenorrhea", "Endometriosis"]
+        },
+        {
+          region: "Left Lower Quadrant",
+          cases: ["Diverticulitis"]
+        },
+        {
+          region: "Generalized",
+          cases: ["Peritonitis"]
+        }
       ]
+      
+      
     },
     {
       title: "Ankle Pain",

@@ -11,6 +11,7 @@ import DischargeFollowUp from "./Pages/DischargeFollowUp";
 import Ethics from "./Pages/Ethics";
 import Counseling from "./Pages/Counseling";
 import Practicals from "./Pages/Practicals";
+import SignIn from "./Pages/SignIn"; // ✅ Add this line
 
 import "./App.css"; // Make sure this import exists
 
@@ -28,6 +29,9 @@ function App() {
         <Link to="/counseling">Counseling</Link>
         <Link to="/practicals">Practicals</Link>
         <Link to="/about">About</Link>
+        <Link to="/signin" style={{ marginLeft: "auto", fontWeight: "bold" }}>
+          Sign In
+        </Link>
       </nav>
 
       <Routes>
@@ -41,12 +45,13 @@ function App() {
         <Route path="/counseling" element={<Counseling />} />
         <Route path="/practicals" element={<Practicals />} />
         <Route path="/about" element={<About />} />
+        <Route path="/signin" element={<SignIn />} /> {/* ✅ Sign In Route */}
       </Routes>
     </Router>
   );
 }
 
-
 export default App;
+
 
 

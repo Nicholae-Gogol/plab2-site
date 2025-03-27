@@ -1,41 +1,78 @@
-/* Grid wrapper for all cards */
+/* Grid wrapper using flex to avoid stretching */
 .complaint-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: flex-start;
-    align-items: flex-start; /* Key: prevents other cards from stretching when one expands */
-    margin-top: 1rem;
-  }
-  
-  /* Individual complaint card */
-  .complaint-card {
-    width: 300px;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Hover effect for card */
-  .complaint-card:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Top section of card that toggles open/close */
-  .complaint-header {
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Section that contains the approach and scenarios */
-  .complaint-details {
-    margin-top: 0.5rem;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: flex-start;
+}
+
+/* Individual complaint card */
+.complaint-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+
+/* Hover shadow */
+.complaint-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Clickable top header of card */
+.complaint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Content that expands and collapses */
+.complaint-details {
+  margin-top: 0.5rem;
+  word-break: break-word;
+  display: none; /* ✅ Start hidden */
+}
+
+/* Show complaint-details only when card has .open class */
+.complaint-card.open .complaint-details {
+  display: block;
+}
+
+/* Subheadings (e.g., "Right Upper Quadrant") */
+.complaint-details h4 {
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Tags for clickable cases */
+.case-chip-link {
+  display: inline-block;
+  background-color: #e0e0e0;
+  padding: 0.35rem 0.7rem;
+  margin: 0.25rem 0.3rem 0.25rem 0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.case-chip-link:hover {
+  background-color: #ccc;
+  text-decoration: none;
+}
+
+
