@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -11,9 +12,11 @@ import DischargeFollowUp from "./Pages/DischargeFollowUp";
 import Ethics from "./Pages/Ethics";
 import Counseling from "./Pages/Counseling";
 import Practicals from "./Pages/Practicals";
-import SignIn from "./Pages/SignIn"; // ✅ Add this line
+import SignIn from "./Pages/SignIn";
+import Register from "./Pages/Register";
+import TopicPage from "./components/DiagnosticCases/TopicDetail"; // ✅ NEW
 
-import "./App.css"; // Make sure this import exists
+import "./App.css";
 
 function App() {
   return (
@@ -32,12 +35,14 @@ function App() {
         <Link to="/signin" style={{ marginLeft: "auto", fontWeight: "bold" }}>
           Sign In
         </Link>
+        <Link to="/register">Register</Link>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/presenting" element={<PresentingComplaints />} />
         <Route path="/diagnostic" element={<DiagnosticCases />} />
+        <Route path="/diagnostic/:topicId" element={<TopicPage />} /> {/* ✅ NEW */}
         <Route path="/condition-follow-up" element={<ConditionFollowUp />} />
         <Route path="/test-follow-up" element={<TestFollowUp />} />
         <Route path="/discharge-follow-up" element={<DischargeFollowUp />} />
@@ -45,7 +50,8 @@ function App() {
         <Route path="/counseling" element={<Counseling />} />
         <Route path="/practicals" element={<Practicals />} />
         <Route path="/about" element={<About />} />
-        <Route path="/signin" element={<SignIn />} /> {/* ✅ Sign In Route */}
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );

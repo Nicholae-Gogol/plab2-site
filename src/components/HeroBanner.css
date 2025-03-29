@@ -1,0 +1,31 @@
+/* src/components/HeroBanner.css */
+
+/* The container is limited in height and hides overflow */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  max-height: 400px; /* Adjust as desired for a shorter banner */
+  overflow: hidden;  /* Hide any image area that exceeds 400px in height */
+}
+
+/* The hero image is scaled to 100% width but uses 'contain' to keep entire cartoon visible. 
+   That can cause letterboxing (blank space) if the aspect ratio doesn't match. */
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* ensures entire cartoon is visible */
+}
+
+/* Absolutely position your text so it overlays the image */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: #fff;
+  background-color: rgba(0,0,0,0.3); /* optional overlay behind text for readability */
+  padding: 1rem;
+  border-radius: 6px;
+}
+
