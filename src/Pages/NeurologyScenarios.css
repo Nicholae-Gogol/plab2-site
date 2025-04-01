@@ -1,0 +1,49 @@
+/* Use a white background for the main table for a cleaner look */
+.table {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+  }
+  
+  /* Topic row: a teal background with white text */
+  .topic-row td {
+    background-color: #009688; /* Material teal shade */
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* If you're using the hover class from Bootstrap,
+     let's give a subtle hover effect to scenario rows */
+  .table-hover tbody tr:hover {
+    background-color: #f8f9fa; /* Light gray on hover */
+  }
+  
+  /* Image cell styling: center the image */
+  .scenario-image-cell {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .scenario-image {
+    max-width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Case description styling */
+  .case-description {
+    display: block;
+    margin-top: 4px;
+    font-style: italic;
+    color: #555;
+  }
+  
+  /* Link styling (Google Drive link) */
+  .google-drive-link {
+    color: #0d6efd; /* Bootstrap primary link color */
+    text-decoration: underline;
+    margin-top: 4px;
+    display: inline-block;
+  }
+  

@@ -15,6 +15,7 @@ import Practicals from "./Pages/Practicals";
 import SignIn from "./Pages/SignIn";
 import Register from "./Pages/Register";
 import TopicPage from "./components/DiagnosticCases/TopicDetail"; // ✅ NEW
+import NeurologyScenarios from "./Pages/NeurologyScenarios";
 
 import "./App.css";
 
@@ -52,6 +53,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/diagnostic/neurology" element={<NeurologyScenarios />} />
       </Routes>
     </Router>
   );
