@@ -184,6 +184,27 @@ function Home() {
               </Card.Body>
             </Card>
           </div>
+
+          {/* CARD #8: Payment */}
+          <div>
+            <Card className="mx-2">
+              <Card.Img
+                variant="top"
+                src="/Images/payment.jpg"
+                alt="Payment"
+                style={{ height: "200px", objectFit: "cover" }}
+              />
+              <Card.Body>
+                <Card.Title>Payment</Card.Title>
+                <Card.Text>
+                  Complete your purchase securely using our payment gateway.
+                </Card.Text>
+                <Button variant="primary" href="/payment">
+                  Go to Payment
+                </Button>
+              </Card.Body>
+            </Card>
+          </div>
         </Slider>
       </Container>
     </>
